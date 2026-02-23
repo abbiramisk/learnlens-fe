@@ -1,16 +1,24 @@
-# React + Vite
+# LearnLens Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React app for LearnLens — textbook personalization: build a profile, upload a PDF, get AI summary and study suggestions. The UI came from the interview task; I made the changes below.
 
-Currently, two official plugins are available:
+## Hosting
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** [https://learnlens-fe.vercel.app/](https://learnlens-fe.vercel.app/)
+- **Backend:** [https://learnlens-be.vercel.app](https://learnlens-be.vercel.app)
 
-## React Compiler
+## Changes I made
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Step button hover text visibility** — Nav step labels (Intro, Your Profile, Upload, Evaluate) are now readable on hover (fixed contrast).
+- **Fixed broken upload page UI** — Upload screen layout and spacing fixed so dropzone, file info, and buttons look correct on all screen sizes.
+- **Submit “Personalize” loader** — Added a loading spinner and “Personalizing…” text on the button while the PDF is being processed.
+- **Prettier markdown** — Styled the AI result block (headings, lists, code, links) so the summary and suggestions are easier to read.
 
-## Expanding the ESLint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Point the app at the backend with a `.env` containing `VITE_API_URL` if needed, or it uses `localhost:8000` by default.
