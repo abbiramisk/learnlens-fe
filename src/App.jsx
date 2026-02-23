@@ -203,7 +203,7 @@ const styles = `
     align-items: center;
   }
   .btn-primary {
-    background: var(--warm);
+    background: var(--ink);
     color: var(--cream);
     border: none;
     padding: 14px 32px;
@@ -217,15 +217,8 @@ const styles = `
     align-items: center;
     gap: 10px;
   }
-  .btn-primary:hover { filter: brightness(0.92); transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--warm); filter: none; transform: translateY(-1px); }
   .btn-primary:disabled:hover { transform: none; }
-  .btn-primary.btn-primary--ink {
-    background: var(--ink);
-  }
-  .btn-primary.btn-primary--ink:hover {
-    background: var(--warm);
-    filter: none;
-  }
   .btn-spinner {
     display: inline-block;
     width: 18px;
@@ -855,7 +848,7 @@ export default function App() {
               </div>
 
               <div className="intro-cta">
-                <button className="btn-primary btn-primary--ink" onClick={() => goTo("profile")}>
+                <button className="btn-primary" onClick={() => goTo("profile")}>
                   Get Started →
                 </button>
                 <button
